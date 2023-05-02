@@ -1,0 +1,60 @@
+Privacy Policy for "MyVisit Rega Helper"
+
+Last updated: 16.03.2023
+
+MyVisit Rega Helper ("us", "we", or "our") operates the "MyVisit Rega Helper" Chrome Extension (hereinafter referred to as the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+
+By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
+
+Information Collection and Use
+We collect several different types of information for various purposes to provide and improve our Service to you.
+
+Types of Data Collected:
+
+a. Personal Data
+
+While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:
+
+Name
+ID number
+Phone number
+
+b. Usage Data
+
+We may also collect information on how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g., IP address), browser type, browser version and other diagnostic data.
+
+Use of Data
+MyVisit Rega Helper uses the collected data for various purposes:
+
+To provide and maintain our Service
+To notify you about changes to our Service
+To allow you to participate in interactive features of our Service when you choose to do so
+To gather analysis or valuable information so that we can improve our Service
+To monitor the usage of our Service
+To detect, prevent, and address technical issues
+Data Storage and Transfer
+The data we collect from you, including Personal Data, is stored on Telegram bot servers and is passed to the extension using a secret token. We take all necessary measures to ensure the security of your data during transmission and storage.
+
+Disclosure of Data
+We may disclose your Personal Data in the good faith belief that such action is necessary to:
+
+To comply with a legal obligation
+To prevent or investigate possible wrongdoing in connection with the Service
+To protect the personal safety of users of the Service or the public
+To protect against legal liability
+
+
+Changes to This Privacy Policy
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+
+We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "last updated" date at the top of this Privacy Policy.
+
+You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+
+Contact Us
+If you have any questions about this Privacy Policy, please contact us:
+
+By email: webstore.dev.tarsis[@]gmail.com
+By visiting this page on our website: [Your Website URL]
+
+MyVisit Rega Helper is not affiliated with or endorsed by Telegram or Google.
