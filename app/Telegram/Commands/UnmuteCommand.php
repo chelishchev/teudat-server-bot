@@ -36,7 +36,7 @@ class UnmuteCommand extends UserCommand
         $user->save();
 
         return $this->replyToChat(
-            Markdown::escapeText('Автоматические уведомления о новых слотах выключены 👍'),
+            Markdown::escapeText('Автоматические уведомления о новых слотах включены 👍'),
             [
                 'parse_mode' => 'MarkdownV2',
                 'disable_web_page_preview' => true,
