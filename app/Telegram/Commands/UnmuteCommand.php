@@ -32,8 +32,7 @@ class UnmuteCommand extends UserCommand
         }
         UserUsage::track($user->id, $this->getName());
 
-        $user->mute_status = User::MUTE_STATUS_OFF;
-        $user->save();
+        $user->unmute();
 
         return $this->replyToChat(
             Markdown::escapeText('Автоматические уведомления о новых слотах включены 👍'),

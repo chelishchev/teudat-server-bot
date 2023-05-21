@@ -14,6 +14,7 @@ use Longman\TelegramBot\Entities\Message;
  * @property int $id
  * @property int $telegram_id
  * @property int $was_token_used
+ * @property int $mute_status
  * @property string $name
  * @property string $teudat_id
  * @property string $mobile_phone
@@ -29,6 +30,8 @@ class User extends Authenticatable
 
     public const TOKEN_LENGTH = 32;
     public const TOKEN_LENGTH_OLD = 22;
+    public const MUTE_STATUS_ON = 1;
+    public const MUTE_STATUS_OFF = 0;
 
     protected TelegramUserData $telegramData;
 
@@ -43,6 +46,7 @@ class User extends Authenticatable
         'mobile_phone',
         'telegram_id',
         'was_token_used',
+        'mute_status',
         'telegram_data',
         'departments',
         'access_token',
@@ -56,6 +60,7 @@ class User extends Authenticatable
     protected $hidden = [
         'access_token',
         'was_token_used',
+        'mute_status',
         'telegram_id',
         'telegram_data',
         'departments',
@@ -100,6 +105,11 @@ class User extends Authenticatable
         return User::query()->where('telegram_id', $telegramUserData->getId())->first();
     }
 
+    public static function findByTelegramId(int $userTelegramId): ?static
+    {
+        return User::query()->where('telegram_id', $userTelegramId)->first();
+    }
+
     public static function buildFromMessage(Message $message): static
     {
         $telegramUserData = TelegramUserData::buildByMessage($message);
@@ -109,6 +119,20 @@ class User extends Authenticatable
         $user->setTelegramData($telegramUserData);
 
         return $user;
+    }
+
+    public function mute(): bool
+    {
+        $this->mute_status = User::MUTE_STATUS_ON;
+
+        return $this->save();
+    }
+
+    public function unmute(): bool
+    {
+        $this->mute_status = User::MUTE_STATUS_OFF;
+
+        return $this->save();
     }
 
 	public function jsonSerialize(): array

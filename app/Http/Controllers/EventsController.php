@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\UserAppointment;
 use App\Models\UserUsage;
 use App\Telegram\Markdown;
+use Longman\TelegramBot\Entities\InlineKeyboard;
 
 class EventsController extends ApiBaseController
 {
@@ -112,10 +113,18 @@ class EventsController extends ApiBaseController
 
             if ($reason === 'appointmentGot')
             {
+                $keyboard = (new InlineKeyboard(
+                    [
+                        ['text' => 'Да 🔕', 'callback_data' => 'mute'],
+                        ['text' => 'Нет', 'callback_data' => 'unmute'],
+                    ]
+                ));
+
                 $response = \Longman\TelegramBot\Request::sendMessage([
                     'chat_id' => $user->getTelegramData()->getId(),
-                    'text' => $this->buildMessageForSayThanks(),
+                    'text' => "Мы можем отключить для вас уведомления о ближайших слотах, если они больше не нужны\.\n\nОтключить уведомления?",
                     'parse_mode' => 'MarkdownV2',
+                    'reply_markup' => $keyboard,
                     'disable_web_page_preview' => true,
                 ]);
             }
@@ -176,7 +185,7 @@ TEXT;
 
         $escapedDate = Markdown::escapeText($date);
 
-        return Markdown::escapeText("⚡⚡⚡ Ура! Мазаль тов 🥳🥳🥳\nПолучилось записаться в :name, :date. Мы очень рады за вас!", [
+        return Markdown::escapeText("⚡⚡⚡ Ура! Мазаль тов 🥳🥳🥳\nПолучилось записаться в :name, :date.\nМы очень рады, что MyVisit Rega Helper помог вам!!", [
             ':date' => "*{$escapedDate}*",
             ':name' => "*{$department['name']}*",
         ]);

@@ -32,11 +32,10 @@ class MuteCommand extends UserCommand
         }
         UserUsage::track($user->id, $this->getName());
 
-        $user->mute_status = User::MUTE_STATUS_ON;
-        $user->save();
+        $user->mute();
 
         return $this->replyToChat(
-            text: Markdown::escapeText('Автоматические уведомления о новых слотах отключены 👍.\nВы всегда можете запустить /unmute для включения.'),
+            text: Markdown::escapeText("Автоматические уведомления о новых слотах отключены 👍.\nВы всегда можете запустить /unmute для включения."),
             data: [
                 'parse_mode' => 'MarkdownV2',
                 'disable_web_page_preview' => true,
